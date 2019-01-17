@@ -17,10 +17,13 @@ public class ThreadTest {
         ExecutorService threadPool= Executors.newFixedThreadPool(5);
         //线程池的submit方法表示往使用线程池执行任务  其参数可以是callable接口 和futureTask
         //当传入callable接口的参数时 ，返回值future可以用来得到执行结果
+        //Future<Integer> integerFuture = threadPool.submit(callable);
         //当传入futureTask的参数 就是把这个futureTask交给线程池管理 不用获取返回值future,直接用futureTask的get方法获取返回值
         //传入futureTask时，返回的future的get方法获取不到返回值 get方法是用来阻塞方法的，直到线程执行完返回结果。
-        Future future = threadPool.submit(futureTask);
         thread1.start();
+        thread1.join();//join方法底层依赖wait方法 让当前的主线程等待
+        Future future = threadPool.submit(futureTask);
+
         thread2.start();
         System.out.println(future.get());
 //        thread3.start();
