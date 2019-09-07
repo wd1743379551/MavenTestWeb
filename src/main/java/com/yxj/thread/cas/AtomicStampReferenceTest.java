@@ -16,7 +16,7 @@ public class AtomicStampReferenceTest {
             int stamp = stampedReference.getStamp();
             System.out.println("before sleep stamp"+stamp);
             try {
-                Thread.sleep(3);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

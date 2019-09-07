@@ -1,6 +1,7 @@
 package com.yxj.thread.cyclicbarrier;
 
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.locks.LockSupport;
 
 /**
  * 回环屏障（CyclicBarrier与countDownLatch的区别在于）
@@ -25,10 +26,16 @@ import java.util.concurrent.CyclicBarrier;
 public class CyclicBarrierTest {
 
     public static void main(String[] args) {
-        CyclicBarrier cyclicBarrier=new CyclicBarrier(10);
-        for(int i=0;i<10;i++){
-            new Thread(new RunThread(cyclicBarrier),"运动员"+i).start();
-        }
+//        CyclicBarrier cyclicBarrier=new CyclicBarrier(10);
+//        for(int i=0;i<10;i++){
+//            new Thread(new RunThread(cyclicBarrier),"运动员"+i).start();
+//        }
+
+        System.out.println("unpark");
+        LockSupport.unpark(Thread.currentThread());
+        System.out.println("2222");
+        LockSupport.park(Thread.currentThread());
+        System.out.println("finish");
     }
 
 

@@ -1,5 +1,8 @@
 package com.yxj.thread.countdownlatch;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -22,6 +25,14 @@ public class CountDownLatchTest {
         for (int i=0;i<10;i++){
             executorService.submit(runThread);
         }
+        // 获取系统中当前运行的线程的工具类
+//        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
+//        ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(false, false);
+//        if (threadInfos != null && threadInfos.length > 0) {
+//            for (ThreadInfo threadInfo : threadInfos) {
+//                System.out.println(threadInfo.getThreadId() + threadInfo.getThreadName());
+//            }
+//        }
         try {
             arriveDown.await();
         } catch (InterruptedException e) {
