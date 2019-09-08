@@ -7,7 +7,7 @@ public class AtomicReferenceTest {
     private static AtomicReference<User> atomicReference = new AtomicReference<>();
 
     /**
-     * 说明atomicReference指向的是对象引用
+     * 说明atomicReference指向的是对象引用  通过AtomicReference改变对象 原对象也会改变
      * @param args
      */
     public static void main(String[] args) {
@@ -28,5 +28,7 @@ public class AtomicReferenceTest {
         atomicReference.get().setUserName("wangwu");
         System.out.println(oldUser.getAge());
         System.out.println(oldUser.getUserName());
+        System.out.println(newUser.getUserName());
+        System.out.println(newUser.getAge());
     }
 }

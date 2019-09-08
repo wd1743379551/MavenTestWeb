@@ -1,7 +1,8 @@
 package com.yxj.single;
 
 /**
- * 懒汉模式第3种 只同步关键部分
+ * 懒汉模式第3种 只同步关键部分  不安全
+ * 加volatile可解决
  *
  */
 public class SingleTon4 {
