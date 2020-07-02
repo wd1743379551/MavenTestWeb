@@ -8,6 +8,7 @@ import java.util.List;
  *
  * 协变参数 集合中不能添加任意元素   因为代码不知道你传进来的集合具体泛型
  * 传参可以传指定类及其子类
+ * 协变常用来做方法的返回值
  */
 public class CovariantDemo2 {
 
@@ -18,7 +19,7 @@ public class CovariantDemo2 {
 
         CovariantDemo2.testCovariant(personList);//
         CovariantDemo2.testCovariant(womanList);//
-//        CovariantDemo2.testCovariant(animalList);// 编译报错
+//        CovariantDemo2.testCovariant(animolalList);// 编译报错
 
 
 

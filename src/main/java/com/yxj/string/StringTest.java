@@ -1,5 +1,6 @@
 package com.yxj.string;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
 import java.util.regex.Matcher;
@@ -29,8 +30,36 @@ public class StringTest {
     }
 
     @Test
-    public void test2(){
-        StringBuffer stringBuffer=new StringBuffer("helloworld");
-        System.out.println(stringBuffer.insert(2,"123"));
+    public void test2() {
+        StringBuffer stringBuffer = new StringBuffer("helloworld");
+        System.out.println(stringBuffer.insert(2, "123"));
+    }
+
+    @Test
+    public void test3() {
+        String str = null;
+        String str2 = "13";
+        String str3 = str +str2;
+        Object o = null;
+
+        String str4 = o + str2;
+
+        System.out.println(str4);
+
+        System.out.println(str3);
+//        System.out.println(str.toString());
+    }
+
+
+    @Test
+    public void test4() {
+        long l = System.nanoTime();
+        System.out.println(l);
+        long l1 = System.currentTimeMillis();
+        System.out.println(l1);
+
+        String s = RandomStringUtils.randomNumeric(16);
+        System.out.println(s);
+
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
  * 逆变  ? super Person
  *
  * 传参传person的父类  添加时可以添加person子类对象  因为这个约定了 传进来的集合泛型一定是person及其父类
- *
+ * 逆变用来做方法的参数
  */
 public class CovariantDemo3 {
 
