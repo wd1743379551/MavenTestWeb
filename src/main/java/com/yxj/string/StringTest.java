@@ -47,6 +47,12 @@ public class StringTest {
         System.out.println(str4);
 
         System.out.println(str3);
+
+
+        Object o2 = new Object();
+        String str5 = o2 + str2;
+        System.out.println(str5);
+
 //        System.out.println(str.toString());
     }
 
@@ -58,7 +64,7 @@ public class StringTest {
         long l1 = System.currentTimeMillis();
         System.out.println(l1);
 
-        String s = RandomStringUtils.randomNumeric(16);
+        String s = RandomStringUtils.randomAlphabetic(16);
         System.out.println(s);
 
     }
