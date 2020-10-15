@@ -26,6 +26,8 @@ public class EchoServer {
                     .childHandler(new ChannelInitializer<Channel>() {  //连接时执行
                         @Override
                         protected void initChannel(Channel ch) throws Exception {
+                            // 每次有新的连接Channel加入会执行这里的代码 即给连接添加处理的handler
+                            // 所以服务器端可以共享handler
                             ch.pipeline().addLast(handler);
                         }
                     })
