@@ -29,6 +29,7 @@ public class FixLengthServer {
                     .childHandler(new ChannelInitializer<Channel>() {
                         @Override
                         protected void initChannel(Channel ch) throws Exception {
+                            // 当传输中文时  使用固定长度的解码器指定的长度需要是字节数组的长度
                             ch.pipeline().addLast(new FixedLengthFrameDecoder(FixLengthClient.clientReq.getBytes().length))
                                     .addLast(new FixLengthServerHandler());
                         }
